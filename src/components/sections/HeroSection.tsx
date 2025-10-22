@@ -1,25 +1,62 @@
+"use client";
+
 import { personalInfo } from "@/data/constants";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+
+  // Disable body scroll when modal is open
+  useEffect(() => {
+    if (isImageModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup function to restore scroll on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isImageModalOpen]);
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isImageModalOpen) {
+        setIsImageModalOpen(false);
+      }
+    };
+
+    if (isImageModalOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isImageModalOpen]);
+
   return (
     <section className="relative overflow-hidden py-12 sm:py-16">
       <div className="container-narrow">
         {/* True 2x2 Grid Layout */}
         <div className="space-y-8">
           {/* ROW 1 */}
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
+          <div className="grid lg:grid-cols-12 gap-8 items-start group">
             {/* Row 1, Col 1 - Profile Picture + Contact - Fully Centered */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="relative mt-8">
-                <div className="absolute -inset-1 bg-sky-500/20 rounded-full blur-lg"></div>
+            <div className="lg:col-span-4 flex flex-col items-center justify-center space-y-4 text-center transition-all duration-700 ease-out">
+              <div className="relative mt-8 picture-hover-container group/pic">
+                <div className="absolute -inset-1 bg-sky-500/20 rounded-full blur-lg group-hover/pic:bg-sky-400/25 transition-all duration-700"></div>
                 <Image
                   src="/images/professionalpic.jpg"
                   alt={personalInfo.name}
                   width={280}
                   height={280}
-                  className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-2 border-sky-500/30 shadow-xl mx-auto"
+                  className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-2 border-sky-500/30 shadow-xl mx-auto cursor-pointer hover:scale-102 hover:shadow-2xl hover:border-sky-400/35 transition-all duration-700 ease-out transform hover:translate-x-1"
                   priority
+                  onClick={() => setIsImageModalOpen(true)}
                 />
               </div>
 
@@ -113,9 +150,11 @@ export default function HeroSection() {
             </div>
 
             {/* Row 1, Col 2 - Name, Title, Seeking, About */}
-            <div className="lg:col-span-8 space-y-4">
+            <div className="lg:col-span-8 space-y-4 transition-all duration-700 ease-out group-hover:scale-101">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="gradient-text">{personalInfo.name}</span>
+                <span className="bg-linear-to-t from-blue-600 to-cyan-300 bg-clip-text text-transparent hover:from-blue-500 hover:to-cyan-200 hover:scale-100.5 hover:tracking-wide transition-all duration-2000 ease-out inline-block">
+                  {personalInfo.name}
+                </span>
               </h1>
 
               <div className="space-y-4">
@@ -144,7 +183,7 @@ export default function HeroSection() {
           </div>
 
           {/* ROW 2 */}
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid lg:grid-cols-12 gap-8 items-stretch transition-all duration-700 ease-out group-hover:scale-101">
             {/* Row 2, Col 1 - Quick Actions - Same style as Core Expertise */}
             <div className="lg:col-span-4">
               <div className="modern-card p-6 h-full flex flex-col">
@@ -331,6 +370,45 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Profile Picture Modal */}
+      {isImageModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <div
+            className="relative max-w-2xl max-h-[80vh] p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute -top-3 -right-3 z-10 bg-slate-800/90 hover:bg-slate-700 border border-slate-600 rounded-full p-2.5 shadow-xl transition-all duration-200 hover:scale-110"
+            >
+              <svg
+                className="w-5 h-5 text-slate-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <Image
+              src="/images/professionalpic.jpg"
+              alt={personalInfo.name}
+              width={600}
+              height={600}
+              className="rounded-xl shadow-2xl max-w-full max-h-full object-contain border border-slate-700/50"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
