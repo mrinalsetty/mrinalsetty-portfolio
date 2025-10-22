@@ -7,11 +7,13 @@ export default function Navbar() {
           <nav className="flex items-center gap-8">
             {[
               { href: "#", label: "Home" },
-              { href: "#education", label: "Education" },
               { href: "#experience", label: "Experience" },
               { href: "#projects", label: "Projects" },
+              { href: "#achievements", label: "Achievements" },
+              { href: "#education", label: "Education" },
               { href: "#skills", label: "Skills" },
               { href: "#certifications", label: "Certifications" },
+              { href: "#activities", label: "Activities" },
             ].map((item) => (
               <a
                 key={item.href}
