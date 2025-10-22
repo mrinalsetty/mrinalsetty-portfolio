@@ -1,31 +1,52 @@
-import Card from "@/components/ui/Card";
 import { experiences } from "@/data/constants";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="container-narrow py-8 sm:py-12">
-      <h2 className="text-2xl sm:text-3xl font-semibold">Experience</h2>
-      <div className="mt-6 space-y-6">
+    <section
+      id="experience"
+      className="section-scroll-target container-narrow py-16 sm:py-20"
+    >
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-4">
+          Professional Experience
+        </h2>
+        <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          Building the future with Generative AI and Full-Stack Engineering
+        </p>
+      </div>
+
+      <div className="space-y-8">
         {experiences.map((exp, index) => (
-          <Card key={index}>
-            <div className="flex flex-wrap justify-between gap-2">
-              <h3 className="font-semibold">
-                {exp.title} — {exp.company}
-              </h3>
-              <span className="text-sm text-slate-500">{exp.period}</span>
+          <div key={index} className="timeline-card">
+            <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-1">
+                  {exp.title}
+                </h3>
+                <div className="text-blue-300 font-semibold">{exp.company}</div>
+              </div>
+              <div className="text-blue-300 font-semibold text-sm bg-blue-500/10 px-3 py-1 rounded-lg border border-blue-500/30 whitespace-nowrap">
+                {exp.period}
+              </div>
             </div>
+
             {exp.achievements ? (
-              <ul className="mt-2 list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+              <ul className="space-y-2 text-slate-300">
                 {exp.achievements.map((achievement, achIndex) => (
-                  <li key={achIndex}>{achievement}</li>
+                  <li key={achIndex} className="flex items-start gap-3">
+                    <span className="text-blue-400 mt-2 text-xs">▶</span>
+                    <span className="text-sm leading-relaxed">
+                      {achievement}
+                    </span>
+                  </li>
                 ))}
               </ul>
             ) : (
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-slate-300 text-sm leading-relaxed">
                 {exp.description}
               </p>
             )}
-          </Card>
+          </div>
         ))}
       </div>
     </section>

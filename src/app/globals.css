@@ -1,46 +1,47 @@
 @import "tailwindcss";
 
+/* Professional Big Tech Theme - Blue with Cyan Touches */
 :root {
-  --background: #fafafa;
-  --foreground: #0a0a0a;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --card-bg: #ffffff;
-}
+  /* Blue with Cyan Color Palette */
+  --primary-blue: #3b82f6;
+  --accent-blue: #2563eb;
+  --light-blue: #60a5fa;
+  --cyan-texture: #06b6d4;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #fafafa;
-    --accent: #60a5fa;
-    --accent-hover: #3b82f6;
-    --muted: #9ca3af;
-    --border: #1f2937;
-    --card-bg: #111827;
-  }
-}
+  /* Professional Background */
+  --bg-primary: #000000;
+  --bg-secondary: #0f0f0f;
+  --bg-tertiary: #1a1a1a;
+  --bg-card: #111111;
 
+  /* Text Hierarchy */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+
+  /* Borders & Accents */
+  --border-primary: rgba(59, 130, 246, 0.15);
+  --border-secondary: rgba(59, 130, 246, 0.08);
+  --accent-glow: rgba(59, 130, 246, 0.1);
+}
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: linear-gradient(135deg, var(--background) 0%, #f8fafc 100%);
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   line-height: 1.6;
-  scroll-behavior: smooth;
   overflow-x: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, var(--background) 0%, #030712 100%);
-  }
+  cursor: default;
 }
 
 @layer utilities {
@@ -48,10 +49,19 @@ body {
     @apply max-w-6xl mx-auto px-6 sm:px-8;
   }
 
+  /* Section Scroll Offset for Navigation Fix */
+  .section-scroll-target {
+    scroll-margin-top: 100px;
+  }
+
+  /* Professional Card Styles */
   .modern-card {
-    @apply relative overflow-hidden rounded-3xl border border-slate-200/50 dark:border-slate-800/50 
-           bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-lg hover:shadow-2xl 
-           transition-all duration-500 ease-out;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-secondary);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
   }
 
   .modern-card::before {
@@ -64,38 +74,196 @@ body {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(59, 130, 246, 0.5),
+      var(--primary-sky),
       transparent
     );
+    opacity: 0.3;
   }
 
+  .modern-card:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--accent-glow);
+  }
+
+  /* Professional Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-300 
-           bg-clip-text text-transparent;
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue) 0%,
+      var(--light-blue) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
+  /* Subtle Glassmorphism */
   .glassmorphism {
-    @apply bg-white/10 dark:bg-black/20 backdrop-blur-2xl border border-white/20 dark:border-white/10;
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-secondary);
   }
 
+  /* Professional Buttons */
   .btn-modern {
-    @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-medium 
-           transition-all duration-300 ease-out rounded-2xl overflow-hidden;
+    background: linear-gradient(
+      135deg,
+      var(--accent-sky) 0%,
+      var(--primary-sky) 100%
+    );
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .btn-modern:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 
-           text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    background: linear-gradient(
+      135deg,
+      var(--accent-sky) 0%,
+      var(--primary-sky) 100%
+    );
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
+  }
+
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
   }
 
   .btn-secondary {
-    @apply bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 
-           border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800
-           shadow-sm hover:shadow-lg transform hover:-translate-y-0.5;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-primary);
+    box-shadow: 0 4px 16px var(--accent-glow);
   }
 
   .btn-ghost {
-    @apply text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100
-           hover:bg-slate-100/50 dark:hover:bg-slate-800/50;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-ghost:hover {
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.05);
+    border-color: var(--border-secondary);
+  }
+
+  /* Professional Hover Effects */
+  .hover-lift {
+    transition: all 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  }
+
+  /* Professional Social Icons */
+  .social-icon {
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+  }
+
+  .social-icon:hover {
+    color: var(--primary-sky);
+    transform: scale(1.05);
+  }
+
+  /* Professional Timeline Cards */
+  .timeline-card {
+    background: var(--bg-card);
+    border-left: 2px solid var(--primary-sky);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 1.5rem;
+  }
+
+  .timeline-card:hover {
+    background: var(--bg-secondary);
+    border-left-width: 3px;
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px var(--accent-glow);
+  }
+
+  /* IEEE Paper Highlight - Blue with Cyan Theme */
+  .ieee-highlight {
+    position: relative;
+  }
+
+  .ieee-highlight::before {
+    content: "📄 IEEE";
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--cyan-texture)
+    );
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .ieee-highlight .modern-card {
+    position: relative;
   }
 }

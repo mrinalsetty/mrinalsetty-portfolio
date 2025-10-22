@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mrinal Srinath Setty · Portfolio",
   description:
-    "GenAI Engineer & MSCS @ Northeastern. Agentic AI, LangGraph, LangChain, Full-Stack Engineering.",
+    "GenAI Engineer & MSCS @ Northeastern. Seeking 2026 Summer Internships in AI/ML, Full-Stack Engineering.",
   metadataBase: new URL("https://mrinalsetty.com"),
 };
 

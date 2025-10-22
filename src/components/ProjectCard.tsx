@@ -16,64 +16,54 @@ export default function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="modern-card p-6 hover:scale-[1.02] transition-all duration-300">
+    <div className="modern-card p-6 hover-lift cursor-hover">
       {/* Header */}
       <div className="flex justify-between items-start gap-2 mb-4">
         <div className="flex flex-wrap gap-2">
           {tags.split(" · ").map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-1 text-xs font-medium rounded-md
-                       bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300
-                       border border-blue-200/50 dark:border-blue-800/50"
+              className="px-3 py-1 text-xs font-medium rounded-lg
+                       bg-blue-500/10 text-blue-300 border border-blue-500/20
+                       hover:bg-blue-500/15 transition-all duration-200"
             >
               {tag}
             </span>
           ))}
         </div>
         {period && (
-          <div
-            className="text-xs font-medium text-slate-500 dark:text-slate-400 
-                        px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800"
-          >
+          <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-slate-800/60">
             {period}
           </div>
         )}
       </div>
 
       {/* Title */}
-      <h3
-        className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 
-                   hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-      >
+      <h3 className="text-xl font-bold text-white mb-3 hover:text-blue-300 transition-colors">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+      <p className="text-sm text-slate-400 leading-relaxed mb-6">
         {description}
       </p>
 
       {/* Links */}
-      <div className="flex gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            {...(link.disabled
-              ? {
-                  "aria-disabled": "true",
-                  className: "opacity-50 cursor-not-allowed",
-                }
-              : { target: "_blank", rel: "noopener noreferrer" })}
-            className={`text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-200 ${
-              link.disabled
-                ? "text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800"
-                : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/30"
-            }`}
-          >
-            {link.label}
-            {!link.disabled && (
+      <div className="flex gap-3 pt-4 border-t border-blue-500/15">
+        {links.map((link, index) =>
+          link.disabled ? (
+            <span key={index} className="text-sm text-slate-500">
+              {link.label}
+            </span>
+          ) : (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-200 cursor-hover text-blue-300 hover:text-white hover:bg-blue-500/15 border border-blue-500/20 hover:border-blue-400/40"
+            >
+              {link.label}
               <svg
                 className="inline w-3 h-3 ml-1"
                 fill="none"
@@ -87,9 +77,9 @@ export default function ProjectCard({
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-            )}
-          </a>
-        ))}
+            </a>
+          )
+        )}
       </div>
     </div>
   );

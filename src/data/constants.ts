@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "IEEE Research Paper (document number 9972172) – Presented in the 3rd Global Conference for Advancement in Technology (GCAT). Web based application to enable users to share data files between devices using sound, with advanced efficiency and security of peer-to-peer file sharing. Developed using C++, Python and Golang.",
     links: [
       {
-        label: "Paper",
+        label: "IEEE Research Paper",
         href: "https://ieeexplore.ieee.org/document/9972172",
         disabled: false,
       },
@@ -20,11 +20,17 @@ export const projects: Project[] = [
   {
     id: "survey-analysis-agent",
     tags: "LangGraph · Flask · React · RAG",
-    title: "Survey Analysis Agent | Deloitte R&D Innovation Initiative Project",
+    title: "Survey Analysis Agent",
     period: "MAR 2025 – MAY 2025",
     description:
       "A full-stack Generative AI application leveraging multiple AI Agents built using the LangGraph Agentic AI Framework. The backend, powered by Flask, integrates LangChain and RAG for intelligent reasoning and contextual retrieval. The system utilizes Vector Databases, Gemini LLM and Guardrails for high-performance, privacy-safe AI automation. The ReactJS frontend delivers an intuitive, responsive interface for insights.",
-    links: [{ label: "Case study", href: "#", disabled: true }],
+    links: [
+      {
+        label: "Deloitte R&D Innovation Initiative Project",
+        href: "",
+        disabled: true,
+      },
+    ],
   },
   {
     id: "socialcrew-ai",
@@ -34,8 +40,11 @@ export const projects: Project[] = [
     description:
       "A social media automation platform built on the CrewAI Agentic AI framework, where multiple AI Agents collaborate to research trends, recommend niche topics, customize social posts, analyze performance, and suggest optimizations in real time. Leveraging RAG for contextual grounding and personalized content creation. Built with Next.js (frontend), Node.js API routes (backend), and Tailwind CSS for a responsive UI.",
     links: [
-      { label: "Demo (coming soon)", href: "#", disabled: true },
-      { label: "Source", href: "#", disabled: true },
+      {
+        label: "Demo (Available Soon)",
+        href: "",
+        disabled: true,
+      },
     ],
   },
   {
@@ -46,8 +55,11 @@ export const projects: Project[] = [
     description:
       "A full-stack Next.js social platform for innovators and developers, enabling them to connect, showcase projects, and network in real time. The platform features dynamic content rendering, role-based access control, and API-powered real-time search, with Tailwind CSS for responsive, modern UI design, and Node.js with MongoDB ensuring secure, scalable, and efficient data management.",
     links: [
-      { label: "Demo (coming soon)", href: "#", disabled: true },
-      { label: "Source", href: "#", disabled: true },
+      {
+        label: "Demo (Available Soon)",
+        href: "",
+        disabled: true,
+      },
     ],
   },
   {
@@ -57,7 +69,7 @@ export const projects: Project[] = [
     period: "JAN 2023 – MAR 2023",
     description:
       "Web-based application for customer purchase prediction using Multiple Linear Regression, leveraging product categories and user demographics to help clients target potential buyers with personalized discounts. Built with Python, Hadoop, and Azure ML Studio.",
-    links: [{ label: "Case study", href: "#", disabled: true }],
+    links: [{ label: "Capstone Project", href: "", disabled: true }],
   },
 ];
 
@@ -73,14 +85,14 @@ export const skillCategories: SkillCategory[] = [
       "Agentic AI, AI Agents, Generative AI, LangGraph, LangChain, CrewAI, Large Language Model (LLM), RAG (Retrieval-Augmented Generation), Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing (NLP), Data Science, Data Engineering, Big Data, PySpark, Hadoop, Azure ML Studio, Guardrails and Vector Databases",
   },
   {
-    title: "Web Development",
-    skills:
-      "Next.js, ReactJS, Redux, Redux-saga, REST API, Tailwind CSS, Bootstrap, UI & UX, PHP, Cypress, HTML, CSS",
-  },
-  {
     title: "Technical Competencies",
     skills:
       "Advanced Algorithms, Data Structures, Problem Solving, Object-oriented Programming, SDLC",
+  },
+  {
+    title: "Web Development",
+    skills:
+      "Next.js, ReactJS, Redux, Redux-saga, REST API, Tailwind CSS, Bootstrap, UI & UX, PHP, Cypress, HTML, CSS",
   },
   {
     title: "Cloud & DevOps",
