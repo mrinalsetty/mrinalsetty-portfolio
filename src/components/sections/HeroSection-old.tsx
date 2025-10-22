@@ -14,14 +14,14 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Profile Section */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start space-y-6">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-blue-600 rounded-full opacity-20 blur-lg"></div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-1000"></div>
               <Image
                 src="/images/professionalpic.jpg"
                 alt={personalInfo.name}
                 width={280}
                 height={280}
-                className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl"
+                className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-white dark:border-gray-800"
                 priority
               />
             </div>
@@ -117,7 +117,7 @@ export default function HeroSection() {
                 {personalInfo.quickFacts.map((fact, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-blue-50 dark:bg-blue-950/50 
+                    className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 
                              rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 
                              border border-blue-200/50 dark:border-blue-800/50"
                   >

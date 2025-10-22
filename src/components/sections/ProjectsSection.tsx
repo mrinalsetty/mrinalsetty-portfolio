@@ -6,7 +6,7 @@ export default function ProjectsSection() {
     <section id="projects" className="container-narrow py-8 sm:py-12">
       <div className="flex items-end justify-between">
         <h2 className="text-2xl sm:text-3xl font-semibold">
-          Selected Projects
+          Projects & Publications
         </h2>
         <a
           href={personalInfo.githubRepos}
@@ -25,6 +25,7 @@ export default function ProjectsSection() {
             tags={project.tags}
             title={project.title}
             description={project.description}
+            period={project.period}
             links={project.links}
           />
         ))}
