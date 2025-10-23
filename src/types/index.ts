@@ -24,6 +24,7 @@ export interface Experience {
   period: string;
   achievements?: string[];
   description?: string;
+  tags?: string[];
 }
 
 export interface PersonalInfo {

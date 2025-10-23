@@ -112,8 +112,8 @@ export const experiences: Experience[] = [
     company: "Deloitte USI",
     period: "JAN 2023 – AUG 2025",
     achievements: [
-      "Spearheaded the Development of full-stack GenAI applications as part of Deloitte's Agentic AI Global Incubator.",
-      "Co-led the development team to drive the successful completion of Deloitte's R&D Innovation Initiative Project — Survey Analysis Agent, a full-stack GenAI application leveraging multiple AI Agents built using the LangGraph Agentic AI framework.",
+      "Spearheaded the Development of full-stack GenAI applications as part of Deloitte's <strong>Agentic AI Global Incubator</strong>.",
+      "Co-led the development team to drive the successful completion of Deloitte's <strong>R&D Innovation Initiative Project</strong> — Survey Analysis Agent, a full-stack GenAI application leveraging multiple AI Agents built using the LangGraph Agentic AI framework.",
       "Successfully contributed to multiple projects, demonstrating expertise as a GenAI Engineer, Data Scientist, Data Engineer & Full Stack Developer.",
       "Led the team and played a pivotal role in the implementation and enhancement of the Customer Purchase Prediction ML model.",
       "Designed & implemented an automation solution for Exadata ingestion – significantly improved the overall process efficiency by more than 50%.",
@@ -124,8 +124,11 @@ export const experiences: Experience[] = [
     title: "Full Stack Engineer Intern",
     company: "CAST Software",
     period: "FEB 2022 – AUG 2022",
-    description:
-      "Implemented many major features and enhancements for CAST Imaging, worked on all aspects of SDLC to ensure smooth release.",
+    tags: ["French Global Product-based company"],
+    achievements: [
+      "Collaborated directly with the Director of Product Management to design and deliver key product features and major enhancements in CAST Imaging, significantly improving functionality, product reliability, and user experience.",
+      "Developed automation testing scripts and contributed across all phases of the SDLC to ensure smooth, high-quality releases.",
+    ],
   },
 ];
 

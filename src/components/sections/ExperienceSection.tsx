@@ -23,7 +23,26 @@ export default function ExperienceSection() {
                 <h3 className="text-xl font-bold text-white mb-1">
                   {exp.title}
                 </h3>
-                <div className="text-blue-300 font-semibold">{exp.company}</div>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="text-blue-300 font-semibold">
+                    {exp.company}
+                  </div>
+                  {exp.tags && exp.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium
+                                   bg-slate-800/40 text-slate-300 border border-blue-600/20
+                                   hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/30
+                                   transition-all duration-200 cursor-default backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="text-blue-300 font-semibold text-sm bg-blue-500/10 px-3 py-1 rounded-lg border border-blue-500/30 whitespace-nowrap">
                 {exp.period}
@@ -35,9 +54,10 @@ export default function ExperienceSection() {
                 {exp.achievements.map((achievement, achIndex) => (
                   <li key={achIndex} className="flex items-start gap-3">
                     <span className="text-blue-400 mt-2 text-xs">▶</span>
-                    <span className="text-sm leading-relaxed">
-                      {achievement}
-                    </span>
+                    <span
+                      className="text-sm leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: achievement }}
+                    />
                   </li>
                 ))}
               </ul>
