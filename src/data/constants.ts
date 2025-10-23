@@ -69,7 +69,7 @@ export const projects: Project[] = [
     period: "JAN 2023 – MAR 2023",
     description:
       "Web-based application for customer purchase prediction using Multiple Linear Regression, leveraging product categories and user demographics to help clients target potential buyers with personalized discounts. Built with Python, Hadoop, and Azure ML Studio.",
-    links: [{ label: "Capstone Project", href: "", disabled: true }],
+    links: [{ label: "Deloitte Capstone Project", href: "", disabled: true }],
   },
 ];
 

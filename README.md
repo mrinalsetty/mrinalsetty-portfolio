@@ -1,8 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mrinal Setty - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15 and React 19, showcasing professional experience, projects, achievements, and skills in GenAI engineering and full-stack development.
 
-First, run the development server:
+## 🌟 Live Demo
+
+Visit the live portfolio: [https://mrinalsetty.com](https://mrinalsetty.com)
+
+## 🚀 Features
+
+### Interactive Design
+
+- **Smooth Animations**: Subtle hover effects and transitions throughout
+- **Profile Picture Modal**: Click to view expanded profile image with Escape key support
+- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
+- **Modern UI**: Glassmorphism effects and blue-cyan gradient theme
+
+### Dynamic Content
+
+- **Hero Section**: Interactive 2x2 grid layout with profile, quick actions, and expertise
+- **Experience Timeline**: Professional work history with detailed descriptions
+- **Project Showcase**: Featured projects with IEEE publications and research
+- **Skills Matrix**: Categorized technical skills with interactive tags
+- **Achievements**: Professional accomplishments and certifications
+- **Activities**: Personal interests and extracurricular activities
+
+### Technical Excellence
+
+- **Next.js 15**: Latest framework with App Router
+- **React 19**: Modern React with concurrent features
+- **TypeScript**: Type-safe development
+- **Tailwind CSS v4**: Utility-first styling with custom design system
+- **SEO Optimized**: Meta tags, structured data, and performance optimization
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.1.3
+- **Frontend**: React 19.2.0, TypeScript 5.7.2
+- **Styling**: Tailwind CSS v4.0.0-alpha.31
+- **Development**: ESLint, PostCSS
+- **Deployment**: Vercel
+
+## 📋 Prerequisites
+
+- Node.js 18.x or higher
+- npm, yarn, pnpm, or bun
+
+## 🏗️ Getting Started
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/mrinalsetty/mrinalsetty-portfolio.git
+cd mrinalsetty-portfolio
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Run the development server**
 
 ```bash
 npm run dev
@@ -10,27 +72,119 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open your browser**
+   Visit [http://localhost:3000](http://localhost:3000) to see the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and CSS variables
+│   ├── layout.tsx           # Root layout with metadata
+│   └── page.tsx            # Main page with section imports
+├── components/
+│   ├── Navbar.tsx          # Navigation component
+│   ├── sections/           # Individual page sections
+│   │   ├── HeroSection.tsx        # Hero with profile and quick actions
+│   │   ├── ExperienceSection.tsx  # Work experience timeline
+│   │   ├── ProjectsSection.tsx    # Featured projects
+│   │   ├── AchievementsSection.tsx # Professional achievements
+│   │   ├── EducationSection.tsx   # Academic background
+│   │   ├── ActivitiesSection.tsx  # Personal activities
+│   │   ├── SkillsSection.tsx     # Technical skills
+│   │   ├── CertificationsSection.tsx # Certifications
+│   │   └── ContactSection.tsx    # Contact information
+│   └── ui/                 # Reusable UI components
+├── data/
+│   └── constants.ts        # Portfolio content and data
+└── types/
+    └── index.ts           # TypeScript type definitions
+```
 
-## Learn More
+## 🎨 Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Personal Information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Update your details in `src/data/constants.ts`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Personal info (name, title, description)
+- Experience and education
+- Projects and achievements
+- Skills and certifications
+- Contact information
 
-## Deploy on Vercel
+### Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Colors**: Modify the blue-cyan gradient theme in `globals.css`
+- **Components**: Update individual section styling in their respective files
+- **Layout**: Adjust grid layouts and spacing in section components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Content Sections
+
+The portfolio includes these main sections:
+
+1. **Home** - Hero section with profile and quick actions
+2. **Experience** - Professional work history
+3. **Projects** - Featured projects and publications
+4. **Achievements** - Professional accomplishments
+5. **Education** - Academic background
+6. **Activities** - Personal interests and activities
+7. **Skills** - Technical expertise
+8. **Certifications** - Professional certifications
+
+## 📱 Responsive Design
+
+- **Desktop**: Full layout with sidebar navigation
+- **Tablet**: Adapted grid layouts and navigation
+- **Mobile**: Stacked layout with touch-friendly interactions
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy automatically on every push
+
+### Other Platforms
+
+The portfolio can be deployed to any platform that supports Node.js:
+
+- Netlify
+- AWS Amplify
+- DigitalOcean App Platform
+- Railway
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📞 Contact
+
+**Mrinal Setty**
+
+- Email: mrinalsetty2000@gmail.com
+- LinkedIn: [linkedin.com/in/mrinalsetty](https://linkedin.com/in/mrinalsetty)
+- GitHub: [github.com/mrinalsetty](https://github.com/mrinalsetty)
+
+---
+
+Built using Next.js, React, and TypeScript
