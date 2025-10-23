@@ -145,6 +145,31 @@ export default function HeroSection() {
                     </svg>
                     Scholar
                   </a>
+                  <a
+                    href={personalInfo.hackerrank}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon cursor-hover flex items-center gap-2"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0c1.285 0 9.75 4.886 10.392 6 .645 1.115.645 10.885 0 12C21.75 19.114 13.287 24 12 24s-9.75-4.886-10.392-6C1.002 16.885 1.002 7.115 1.608 6 2.25 4.886 10.715 0 12 0z" />
+                      <text
+                        x="12"
+                        y="15"
+                        fontSize="6"
+                        textAnchor="middle"
+                        fill="black"
+                        fontWeight="bold"
+                      >
+                        HR
+                      </text>{" "}
+                    </svg>
+                    HackerRank
+                  </a>
                 </div>
               </div>
             </div>

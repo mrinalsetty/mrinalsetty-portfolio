@@ -36,6 +36,7 @@ export interface PersonalInfo {
   github: string;
   githubRepos: string;
   googleScholar: string;
+  hackerrank: string;
   resume: string;
   quickFacts: string[];
 }

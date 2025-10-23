@@ -141,6 +141,7 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/mrinalsetty",
   githubRepos: "https://github.com/mrinalsetty?tab=repositories",
   googleScholar: "https://scholar.google.com/citations?user=wgU5qAsAAAAJ&hl=en",
+  hackerrank: "https://www.hackerrank.com/profile/mrinalsetty",
   resume:
     "https://drive.google.com/file/d/1Lo5yKw0Uns0ajpXkIykLwLjOAMRjDs8_/view?usp=drive_link",
   quickFacts: [
@@ -156,7 +157,7 @@ export const education = [
     institution: "Northeastern University, Khoury College of Computer Sciences",
     degree:
       "Master of Science in Computer Science (Focus: Artificial Intelligence)",
-    period: "SEP 2025-PRESENT",
+    period: "SEP 2025-MAY 2027",
     location: "Boston, MA",
   },
   {
