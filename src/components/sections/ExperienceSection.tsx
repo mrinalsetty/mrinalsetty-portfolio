@@ -20,7 +20,7 @@ export default function ExperienceSection() {
           <div key={index} className="timeline-card">
             <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-white mb-1">
+                <h3 className="text-xl font-bold text-white mb-1 whitespace-nowrap">
                   {exp.title}
                 </h3>
                 <div className="flex items-center gap-3 mb-2">
