@@ -99,13 +99,16 @@ export default function HeroSection() {
                   </svg>
                   {personalInfo.phone}
                 </div>
-                {/* Mobile: 2x2 grid for social links, Desktop: horizontal */}
-                <div className="grid grid-cols-2 gap-2 sm:flex sm:justify-center sm:gap-3 lg:gap-4 text-xs sm:text-sm">
+                {/* Social Media Buttons - Single line transparent buttons */}
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
                   <a
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-icon cursor-hover flex items-center gap-1 sm:gap-2 justify-center sm:justify-start"
+                    className="flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2 
+                             bg-transparent hover:bg-blue-600/10 text-slate-300 hover:text-blue-300
+                             border border-blue-600/30 hover:border-blue-400/50 rounded-lg
+                             transition-all duration-200 cursor-hover"
                   >
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4"
@@ -120,7 +123,10 @@ export default function HeroSection() {
                     href={personalInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-icon cursor-hover flex items-center gap-1 sm:gap-2 justify-center sm:justify-start"
+                    className="flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2 
+                             bg-transparent hover:bg-blue-600/10 text-slate-300 hover:text-blue-300
+                             border border-blue-600/30 hover:border-blue-400/50 rounded-lg
+                             transition-all duration-200 cursor-hover"
                   >
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4"
@@ -135,7 +141,10 @@ export default function HeroSection() {
                     href={personalInfo.googleScholar}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-icon cursor-hover flex items-center gap-1 sm:gap-2 justify-center sm:justify-start"
+                    className="flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2 
+                             bg-transparent hover:bg-blue-600/10 text-slate-300 hover:text-blue-300
+                             border border-blue-600/30 hover:border-blue-400/50 rounded-lg
+                             transition-all duration-200 cursor-hover"
                   >
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4"
@@ -150,7 +159,10 @@ export default function HeroSection() {
                     href={personalInfo.hackerrank}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-icon cursor-hover flex items-center gap-1 sm:gap-2 justify-center sm:justify-start"
+                    className="flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2 
+                             bg-transparent hover:bg-blue-600/10 text-slate-300 hover:text-blue-300
+                             border border-blue-600/30 hover:border-blue-400/50 rounded-lg
+                             transition-all duration-200 cursor-hover"
                   >
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4"
