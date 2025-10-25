@@ -24,7 +24,7 @@ export default function ExperienceSection() {
                   {exp.title}
                 </h3>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="text-blue-300 font-semibold">
+                  <div className="text-blue-300 font-semibold whitespace-nowrap">
                     {exp.company}
                   </div>
                   {exp.tags && exp.tags.length > 0 && (
@@ -35,7 +35,7 @@ export default function ExperienceSection() {
                           className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium
                                    bg-slate-800/40 text-slate-300 border border-blue-600/20
                                    hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/30
-                                   transition-all duration-200 cursor-default backdrop-blur-sm"
+                                   transition-all duration-200 cursor-default backdrop-blur-sm whitespace-nowrap"
                         >
                           {tag}
                         </span>

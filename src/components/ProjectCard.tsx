@@ -32,7 +32,7 @@ export default function ProjectCard({
           ))}
         </div>
         {period && (
-          <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-slate-800/60">
+          <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-slate-800/60 whitespace-nowrap">
             {period}
           </div>
         )}
