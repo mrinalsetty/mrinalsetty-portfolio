@@ -43,22 +43,22 @@ export default function SkillsSection() {
         </p>
       </div>
 
-      {/* First Row: 75% AI & Data, 25% Soft Skills */}
-      <div className="grid grid-cols-4 gap-6 mb-6">
-        {/* AI & Data - 75% width (3 columns) */}
+      {/* First Row: Mobile: Stack vertically, Desktop: 75% AI & Data, 25% Soft Skills */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 mb-6">
+        {/* AI & Data - Mobile: Full width, Desktop: 75% width (3 columns) */}
         {aiDataCategory && (
-          <div className="col-span-3 modern-card p-6 hover-lift">
-            <div className="mb-4">
-              <h3 className="text-xl font-bold text-white mb-2">
+          <div className="lg:col-span-3 modern-card p-4 sm:p-6 hover-lift">
+            <div className="mb-3 sm:mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 {aiDataCategory.title}
               </h3>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {getSkillsArray(aiDataCategory.skills).map(
                 (skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium
+                    className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-medium
                            bg-slate-800/40 text-slate-300 border border-blue-600/20
                            hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/30
                            transition-all duration-200 cursor-default backdrop-blur-sm"
@@ -71,20 +71,20 @@ export default function SkillsSection() {
           </div>
         )}
 
-        {/* Soft Skills - 25% width (1 column) */}
+        {/* Soft Skills - Mobile: Full width, Desktop: 25% width (1 column) */}
         {softSkillsCategory && (
-          <div className="col-span-1 modern-card p-6 hover-lift">
-            <div className="mb-4">
-              <h3 className="text-xl font-bold text-white mb-2">
+          <div className="lg:col-span-1 modern-card p-4 sm:p-6 hover-lift">
+            <div className="mb-3 sm:mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 {softSkillsCategory.title}
               </h3>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {getSkillsArray(softSkillsCategory.skills).map(
                 (skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium
+                    className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-medium
                            bg-slate-800/40 text-slate-300 border border-blue-600/20
                            hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/30
                            transition-all duration-200 cursor-default backdrop-blur-sm"
@@ -98,24 +98,24 @@ export default function SkillsSection() {
         )}
       </div>
 
-      {/* Second Row: Other categories in wider grid (2 columns max) */}
-      <div className="grid gap-6 md:grid-cols-2 mb-6">
+      {/* Second Row: Other categories - Mobile: 1 column, Tablet: 2 columns */}
+      <div className="grid gap-4 sm:gap-6 sm:grid-cols-1 md:grid-cols-2 mb-6">
         {otherCategories.map((category, index) => {
           const allSkills = getSkillsArray(category.skills);
 
           return (
-            <div key={index} className="modern-card p-6 hover-lift">
-              <div className="mb-4">
-                <h3 className="text-xl font-bold text-white mb-2">
+            <div key={index} className="modern-card p-4 sm:p-6 hover-lift">
+              <div className="mb-3 sm:mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                   {category.title}
                 </h3>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {allSkills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium
+                    className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-medium
                              bg-slate-800/40 text-slate-300 border border-blue-600/20
                              hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/30
                              transition-all duration-200 cursor-default backdrop-blur-sm"

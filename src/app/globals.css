@@ -42,108 +42,229 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: default;
+  /* Improve text rendering on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent zoom on input focus on iOS */
+  font-size: 16px;
+}
+
+/* Prevent zoom on inputs for iOS */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Improve scrolling performance on mobile */
+* {
+  -webkit-overflow-scrolling: touch;
 }
 
 @layer utilities {
   .container-narrow {
-    @apply max-w-6xl mx-auto px-6 sm:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Mobile-first responsive utilities */
+  .mobile-padding {
+    @apply px-4 py-3 sm:px-6 sm:py-4 lg:px-8 lg:py-6;
+  }
+
+  .mobile-text-sm {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .mobile-text-base {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  .mobile-spacing {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
   }
 
   /* Section Scroll Offset for Navigation Fix */
   .section-scroll-target {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
   }
 
-  /* Professional Card Styles */
+  /* Mobile-optimized cards */
   .modern-card {
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-secondary);
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     transition: all 0.3s ease;
     position: relative;
   }
 
-  .modern-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--primary-sky),
-      transparent
-    );
-    opacity: 0.3;
+  /* Touch-friendly interactions */
+  @media (hover: hover) {
+    .modern-card:hover {
+      background: var(--bg-secondary);
+      border-color: var(--border-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
   }
 
-  .modern-card:hover {
-    background: var(--bg-secondary);
-    border-color: var(--border-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px var(--accent-glow);
+  /* Improved touch scroll for mobile */
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
-  /* Professional Gradient Text */
-  .gradient-text {
-    background: linear-gradient(
-      135deg,
-      var(--primary-blue) 0%,
-      var(--light-blue) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Mobile-optimized cursor styles */
+  @media (hover: hover) {
+    .cursor-hover:hover {
+      cursor: pointer;
+    }
   }
 
-  /* Subtle Glassmorphism */
-  .glassmorphism {
-    background: rgba(17, 17, 17, 0.8);
-    backdrop-filter: blur(20px);
+  /* Disable tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Social icon mobile optimization */
+  .social-icon {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  /* Timeline card mobile optimization */
+  .timeline-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
     border: 1px solid var(--border-secondary);
-  }
-
-  /* Professional Buttons */
-  .btn-modern {
-    background: linear-gradient(
-      135deg,
-      var(--accent-sky) 0%,
-      var(--primary-sky) 100%
-    );
-    border: none;
-    color: white;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
     border-radius: 0.75rem;
-    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 1rem;
   }
 
+  @media (min-width: 640px) {
+    .timeline-card {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .timeline-card {
+      padding: 2rem;
+    }
+  }
+
+  /* Hover lift effect only on hover-capable devices */
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.modern-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-sky),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+.modern-card:hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+/* Professional Gradient Text */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--light-blue) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile-optimized glassmorphism */
+.glassmorphism {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-secondary);
+  /* Better performance on mobile */
+  will-change: transform;
+}
+
+/* Mobile-friendly buttons */
+.btn-modern {
+  background: linear-gradient(
+    135deg,
+    var(--accent-sky) 0%,
+    var(--primary-sky) 100%
+  );
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  /* Mobile tap optimization */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Only apply hover effects on devices that support hover */
+@media (hover: hover) {
   .btn-modern:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
   }
+}
 
-  .btn-primary {
-    background: linear-gradient(
-      135deg,
-      var(--accent-sky) 0%,
-      var(--primary-sky) 100%
-    );
-    border: none;
-    color: white;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.75rem;
-    padding: 0.75rem 1.5rem;
-  }
+/* Active state for touch devices */
+.btn-modern:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
 
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--accent-sky) 0%,
+    var(--primary-sky) 100%
+  );
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@media (hover: hover) {
   .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
