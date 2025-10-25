@@ -183,7 +183,7 @@ export default function HeroSection() {
               </h1>
 
               <div className="space-y-4">
-                <h2 className="text-xl sm:text-2xl text-slate-300 font-medium">
+                <h2 className="text-lg sm:text-xl text-slate-300 font-medium">
                   {personalInfo.title}
                 </h2>
 
